@@ -112,7 +112,7 @@ const ResumeUpload = () => {
       matchScore,
       skills,
       experience: Math.floor(Math.random() * 10) + 1 + ' years',
-      education: ['Bachelor's', 'Master's', 'PhD'][Math.floor(Math.random() * 3)]
+      education: ["Bachelor's", "Master's", "PhD"][Math.floor(Math.random() * 3)]
     };
   };
 
