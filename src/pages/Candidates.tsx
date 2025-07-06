@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Search, Filter, ChevronDown, ArrowUpDown, Eye, Trash2, Download, 
@@ -33,121 +32,6 @@ interface Candidate {
   status: 'new' | 'reviewed' | 'shortlisted' | 'rejected';
 }
 
-const mockCandidates: Candidate[] = [
-  {
-    id: 1,
-    name: 'Michael Johnson',
-    email: 'michael.johnson@example.com',
-    phone: '(555) 123-4567',
-    position: 'Senior Frontend Developer',
-    matchScore: 92,
-    experience: '7 years',
-    education: 'B.S. Computer Science, Stanford University',
-    skills: ['React', 'TypeScript', 'Redux', 'Node.js', 'AWS', 'Jest', 'Webpack'],
-    missingSkills: ['GraphQL'],
-    uploadDate: '2025-04-08',
-    status: 'shortlisted',
-  },
-  {
-    id: 2,
-    name: 'Emily Chen',
-    email: 'emily.chen@example.com',
-    phone: '(555) 234-5678',
-    position: 'UX Designer',
-    matchScore: 87,
-    experience: '5 years',
-    education: 'M.A. Design, RISD',
-    skills: ['Figma', 'UI Design', 'User Research', 'Prototyping', 'Sketch', 'Adobe XD'],
-    missingSkills: ['Design Systems'],
-    uploadDate: '2025-04-07',
-    status: 'reviewed',
-  },
-  {
-    id: 3,
-    name: 'David Smith',
-    email: 'david.smith@example.com',
-    phone: '(555) 345-6789',
-    position: 'Full Stack Developer',
-    matchScore: 78,
-    experience: '4 years',
-    education: 'B.S. Information Systems, UC Berkeley',
-    skills: ['JavaScript', 'React', 'Express', 'MongoDB', 'HTML', 'CSS'],
-    missingSkills: ['TypeScript', 'Docker', 'AWS'],
-    uploadDate: '2025-04-06',
-    status: 'new',
-  },
-  {
-    id: 4,
-    name: 'Sarah Williams',
-    email: 'sarah.williams@example.com',
-    phone: '(555) 456-7890',
-    position: 'Product Manager',
-    matchScore: 85,
-    experience: '6 years',
-    education: 'MBA, Harvard Business School',
-    skills: ['Agile', 'Jira', 'Product Strategy', 'User Stories', 'Roadmapping', 'Analytics'],
-    missingSkills: ['Technical Background'],
-    uploadDate: '2025-04-05',
-    status: 'shortlisted',
-  },
-  {
-    id: 5,
-    name: 'James Wilson',
-    email: 'james.wilson@example.com',
-    phone: '(555) 567-8901',
-    position: 'DevOps Engineer',
-    matchScore: 73,
-    experience: '3 years',
-    education: 'B.S. Computer Engineering, MIT',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Linux', 'Bash'],
-    missingSkills: ['Terraform', 'Azure', 'GCP'],
-    uploadDate: '2025-04-04',
-    status: 'rejected',
-  },
-  {
-    id: 6,
-    name: 'Jessica Brown',
-    email: 'jessica.brown@example.com',
-    phone: '(555) 678-9012',
-    position: 'Data Scientist',
-    matchScore: 89,
-    experience: '5 years',
-    education: 'Ph.D. Statistics, Carnegie Mellon',
-    skills: ['Python', 'R', 'SQL', 'Machine Learning', 'TensorFlow', 'Data Visualization'],
-    missingSkills: ['Spark', 'Big Data'],
-    uploadDate: '2025-04-03',
-    status: 'shortlisted',
-  },
-  {
-    id: 7,
-    name: 'Robert Garcia',
-    email: 'robert.garcia@example.com',
-    phone: '(555) 789-0123',
-    position: 'Backend Developer',
-    matchScore: 65,
-    experience: '2 years',
-    education: 'B.S. Computer Science, UCLA',
-    skills: ['Java', 'Spring Boot', 'MySQL', 'RESTful APIs', 'Git'],
-    missingSkills: ['Microservices', 'NoSQL', 'Kafka'],
-    uploadDate: '2025-04-02',
-    status: 'reviewed',
-  },
-  {
-    id: 8,
-    name: 'Lisa Martinez',
-    email: 'lisa.martinez@example.com',
-    phone: '(555) 890-1234',
-    position: 'Marketing Manager',
-    matchScore: 82,
-    experience: '8 years',
-    education: 'MBA, Columbia Business School',
-    skills: ['SEO', 'Social Media', 'Content Strategy', 'Analytics', 'Campaign Management'],
-    missingSkills: ['Marketing Automation'],
-    uploadDate: '2025-04-01',
-    status: 'new',
-  },
-];
-
 const statusColors = {
   new: 'bg-blue-500',
   reviewed: 'bg-purple-500',
@@ -175,7 +59,7 @@ const getProgressColor = (score: number) => {
 };
 
 const CandidatesPage = () => {
-  const [candidates, setCandidates] = useState<Candidate[]>(mockCandidates);
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string[]>([]);
   const [scoreFilter, setScoreFilter] = useState<string>('all');

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Search as SearchIcon, Filter, ChevronDown, X, DownloadCloud, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,75 +24,6 @@ interface SearchResult {
   location: string;
   status: 'new' | 'reviewed' | 'shortlisted' | 'rejected';
 }
-
-const mockResults: SearchResult[] = [
-  {
-    id: 1,
-    name: 'Michael Johnson',
-    position: 'Senior Frontend Developer',
-    matchScore: 92,
-    experience: '7 years',
-    education: 'B.S. Computer Science',
-    skills: ['React', 'TypeScript', 'Redux', 'Node.js', 'AWS'],
-    location: 'San Francisco, CA',
-    status: 'shortlisted',
-  },
-  {
-    id: 2,
-    name: 'Emily Chen',
-    position: 'UX Designer',
-    matchScore: 87,
-    experience: '5 years',
-    education: 'M.A. Design',
-    skills: ['Figma', 'UI Design', 'User Research', 'Prototyping'],
-    location: 'Remote',
-    status: 'reviewed',
-  },
-  {
-    id: 3,
-    name: 'David Smith',
-    position: 'Full Stack Developer',
-    matchScore: 78,
-    experience: '4 years',
-    education: 'B.S. Information Systems',
-    skills: ['JavaScript', 'React', 'Express', 'MongoDB'],
-    location: 'New York, NY',
-    status: 'new',
-  },
-  {
-    id: 4,
-    name: 'Sarah Williams',
-    position: 'Product Manager',
-    matchScore: 85,
-    experience: '6 years',
-    education: 'MBA',
-    skills: ['Agile', 'Jira', 'Product Strategy', 'User Stories'],
-    location: 'Boston, MA',
-    status: 'shortlisted',
-  },
-  {
-    id: 5,
-    name: 'James Wilson',
-    position: 'DevOps Engineer',
-    matchScore: 73,
-    experience: '3 years',
-    education: 'B.S. Computer Engineering',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'CI/CD'],
-    location: 'Seattle, WA',
-    status: 'rejected',
-  },
-  {
-    id: 6,
-    name: 'Jessica Brown',
-    position: 'Data Scientist',
-    matchScore: 89,
-    experience: '5 years',
-    education: 'Ph.D. Statistics',
-    skills: ['Python', 'R', 'SQL', 'Machine Learning'],
-    location: 'Chicago, IL',
-    status: 'shortlisted',
-  },
-];
 
 const experienceOptions = [
   { label: 'All Experience', value: 'all' },
@@ -152,7 +82,7 @@ const SearchPage = () => {
     
     // Simulate API call
     setTimeout(() => {
-      setResults(mockResults);
+      setResults([]);
       setIsSearching(false);
     }, 1500);
   };

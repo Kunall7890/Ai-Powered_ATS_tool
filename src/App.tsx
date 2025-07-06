@@ -1,12 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "@/components/Layout";
-import Dashboard from "./pages/Dashboard";
-import Candidates from "./pages/Candidates";
-import JobDescriptions from "./pages/JobDescriptions";
 import Upload from "./pages/Upload";
 import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
@@ -20,9 +16,7 @@ const App = () => (
       <Sonner />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="candidates" element={<Candidates />} />
-          <Route path="job-descriptions" element={<JobDescriptions />} />
+          <Route index element={<Navigate to="/upload" replace />} />
           <Route path="upload" element={<Upload />} />
           <Route path="search" element={<Search />} />
           <Route path="*" element={<NotFound />} />

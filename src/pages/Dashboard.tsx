@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
@@ -6,96 +5,9 @@ import {
   TrendingUp, TrendingDown, Clock 
 } from 'lucide-react';
 
-const statCards = [
-  {
-    title: 'Total Candidates',
-    value: '124',
-    icon: Users,
-    change: '+12% from last month',
-    trend: 'up',
-  },
-  {
-    title: 'High Matches',
-    value: '38',
-    icon: UserCheck,
-    change: '+5% from last month',
-    trend: 'up',
-  },
-  {
-    title: 'Active Jobs',
-    value: '7',
-    icon: Briefcase,
-    change: '-2 from last month',
-    trend: 'down',
-  },
-  {
-    title: 'Avg. Match Score',
-    value: '68%',
-    icon: BarChart3,
-    change: '+3% from last month',
-    trend: 'up',
-  },
-];
-
-const recentMatches = [
-  { 
-    name: 'Michael Johnson', 
-    position: 'Senior Frontend Developer',
-    score: 92,
-    skills: ['React', 'TypeScript', 'Redux', 'Node.js']
-  },
-  { 
-    name: 'Emily Chen', 
-    position: 'UX Designer',
-    score: 87,
-    skills: ['Figma', 'UI Design', 'User Research', 'Prototyping']
-  },
-  { 
-    name: 'David Smith', 
-    position: 'Full Stack Developer',
-    score: 78,
-    skills: ['JavaScript', 'React', 'Express', 'MongoDB']
-  },
-  { 
-    name: 'Sarah Williams', 
-    position: 'Product Manager',
-    score: 85,
-    skills: ['Agile', 'Jira', 'Product Strategy', 'User Stories']
-  },
-  { 
-    name: 'James Wilson', 
-    position: 'DevOps Engineer',
-    score: 73,
-    skills: ['Docker', 'Kubernetes', 'AWS', 'CI/CD']
-  },
-];
-
-const recentJobs = [
-  { 
-    title: 'Senior Frontend Developer', 
-    department: 'Engineering',
-    applicants: 24, 
-    highMatches: 8
-  },
-  { 
-    title: 'UX Designer', 
-    department: 'Design',
-    applicants: 18, 
-    highMatches: 5
-  },
-  { 
-    title: 'Full Stack Developer', 
-    department: 'Engineering',
-    applicants: 32, 
-    highMatches: 12
-  },
-  { 
-    title: 'Product Manager', 
-    department: 'Product',
-    applicants: 15, 
-    highMatches: 6
-  },
-];
+const statCards: any[] = [];
+const recentMatches: any[] = [];
+const recentJobs: any[] = [];
 
 const getScoreColor = (score: number) => {
   if (score >= 80) return 'match-score-high';

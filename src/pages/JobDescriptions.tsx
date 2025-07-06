@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Plus, Search, Calendar, Users, Briefcase, Clock, MoreHorizontal, 
@@ -35,107 +34,6 @@ interface JobDescription {
   description: string;
 }
 
-const mockJobs: JobDescription[] = [
-  {
-    id: 1,
-    title: 'Senior Frontend Developer',
-    department: 'Engineering',
-    location: 'San Francisco, CA',
-    type: 'Full-time',
-    experience: '5+ years',
-    postedDate: '2025-04-01',
-    applicants: 24,
-    matches: 8,
-    keySkills: ['React', 'TypeScript', 'Redux', 'Node.js', 'AWS', 'GraphQL'],
-    status: 'active',
-    description: 'We are looking for a Senior Frontend Developer with strong experience in React and TypeScript. The ideal candidate will have experience building complex web applications and working with modern frontend frameworks.'
-  },
-  {
-    id: 2,
-    title: 'UX Designer',
-    department: 'Design',
-    location: 'Remote',
-    type: 'Full-time',
-    experience: '3+ years',
-    postedDate: '2025-04-03',
-    applicants: 18,
-    matches: 5,
-    keySkills: ['UI Design', 'User Research', 'Prototyping', 'Figma', 'Design Systems'],
-    status: 'active',
-    description: 'We are seeking a talented UX Designer to join our team. In this role, you will create exceptional user experiences through research, wireframing, and prototyping. You will collaborate with product managers and developers to deliver intuitive designs.'
-  },
-  {
-    id: 3,
-    title: 'Full Stack Developer',
-    department: 'Engineering',
-    location: 'New York, NY',
-    type: 'Full-time',
-    experience: '4+ years',
-    postedDate: '2025-03-25',
-    applicants: 32,
-    matches: 12,
-    keySkills: ['JavaScript', 'React', 'Node.js', 'Express', 'MongoDB', 'Docker'],
-    status: 'active',
-    description: 'We are looking for a Full Stack Developer who is proficient with both frontend and backend technologies. The ideal candidate will have experience with JavaScript, React, Node.js, and database technologies.'
-  },
-  {
-    id: 4,
-    title: 'Product Manager',
-    department: 'Product',
-    location: 'Boston, MA',
-    type: 'Full-time',
-    experience: '4+ years',
-    postedDate: '2025-03-20',
-    applicants: 15,
-    matches: 6,
-    keySkills: ['Agile', 'Product Strategy', 'Roadmapping', 'User Stories', 'Data Analysis'],
-    status: 'active',
-    description: 'We are seeking an experienced Product Manager to lead the development of our products. The ideal candidate will have a background in technology and experience managing complex product lifecycles.'
-  },
-  {
-    id: 5,
-    title: 'DevOps Engineer',
-    department: 'Engineering',
-    location: 'Seattle, WA',
-    type: 'Full-time',
-    experience: '3+ years',
-    postedDate: '2025-04-05',
-    applicants: 12,
-    matches: 4,
-    keySkills: ['Docker', 'Kubernetes', 'AWS', 'CI/CD', 'Infrastructure as Code'],
-    status: 'active',
-    description: 'We are looking for a DevOps Engineer to help us build and maintain our cloud infrastructure. The ideal candidate will have experience with AWS, Docker, Kubernetes, and CI/CD pipelines.'
-  },
-  {
-    id: 6,
-    title: 'Backend Developer',
-    department: 'Engineering',
-    location: 'Austin, TX',
-    type: 'Contract',
-    experience: '2+ years',
-    postedDate: '2025-03-15',
-    applicants: 22,
-    matches: 3,
-    keySkills: ['Java', 'Spring Boot', 'MySQL', 'RESTful APIs', 'Microservices'],
-    status: 'closed',
-    description: 'We are looking for a Backend Developer to join our team. The ideal candidate will have experience with Java, Spring Boot, and RESTful APIs.'
-  },
-  {
-    id: 7,
-    title: 'Data Scientist',
-    department: 'Data',
-    location: 'Chicago, IL',
-    type: 'Full-time',
-    experience: '3+ years',
-    postedDate: '2025-04-07',
-    applicants: 0,
-    matches: 0,
-    keySkills: ['Python', 'R', 'SQL', 'Machine Learning', 'Data Visualization'],
-    status: 'draft',
-    description: 'We are seeking a Data Scientist to help us extract insights from our data. The ideal candidate will have experience with Python, R, and machine learning algorithms.'
-  },
-];
-
 const statusColors = {
   active: 'bg-green-500',
   closed: 'bg-gray-500',
@@ -149,7 +47,7 @@ const statusLabels = {
 };
 
 const JobDescriptionsPage = () => {
-  const [jobs, setJobs] = useState<JobDescription[]>(mockJobs);
+  const [jobs, setJobs] = useState<JobDescription[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string[]>([]);
   const [newJobDialogOpen, setNewJobDialogOpen] = useState(false);

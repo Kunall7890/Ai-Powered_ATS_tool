@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, Briefcase, BarChart3, Upload, Search } from 'lucide-react';
@@ -10,33 +9,7 @@ type NavItem = {
   icon: React.ElementType;
 };
 
-const navItems: NavItem[] = [
-  {
-    title: 'Dashboard',
-    href: '/',
-    icon: BarChart3,
-  },
-  {
-    title: 'Candidates',
-    href: '/candidates',
-    icon: FileText,
-  },
-  {
-    title: 'Job Descriptions',
-    href: '/job-descriptions',
-    icon: Briefcase,
-  },
-  {
-    title: 'Upload Resume',
-    href: '/upload',
-    icon: Upload,
-  },
-  {
-    title: 'Search',
-    href: '/search',
-    icon: Search,
-  },
-];
+const navItems: NavItem[] = [];
 
 const Navigation = () => {
   return (
